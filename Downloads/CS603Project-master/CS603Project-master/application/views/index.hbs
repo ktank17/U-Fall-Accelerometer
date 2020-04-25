@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="/css/master.css">
+        <title></title>
+    </head>
+    <body>
+        <nav>
+            <div class="logo" onclick="location.href='/index'">
+                MedRec
+            </div>
+            <div class="loginSignup">
+                <button class="loginSignupButton" type="button" onclick="showDiv('login');">Log In</button>
+            </div>
+            <div class="animate login">
+                <form class="animate form1" action="/login" method="post">
+                    <div onclick="closeDiv('login')" class="close">
+                        &times;
+                    </div>
+                    <div class="loginDetails">
+                        <label for="email"><b>Email </b></label>
+                        <input type="email" name="email" placeholder="Enter email id" required>
+                        <br/>
+                        <label for="password"><b>Password </b></label>
+                        <input type="password" name="password" placeholder="Enter Password" required>
+                        <br/>
+                        <button type="submit" name="login" class="loginButton">Log In</button>
+                    </div>
+                    <br/><br/><br/>
+                    <div class="createAccount">
+                        <p>Don't have an account</p>
+                        <button type="button" onclick="showDiv('form2'); closeDiv('form1');"><b style="color: blue">Sign up</b></button>
+                    </div>
+                </form>
+                <form class="animate form2" action="/register" method="post">
+                    <div onclick="closeDiv('form2'); showDiv('form1');" class="close">
+                        &times;
+                    </div>
+                    <div class="loginDetails">
+                        <label for="name"><b>Name </b></label>
+                        <input type="text" name="name" placeholder="Enter name" required>
+                        <br/>
+                        <label for="email"><b>email </b></label>
+                        <input type="email" name="email" placeholder="Enter email id" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
+                        <br/><br/>
+                        <label for="password"><b>Password </b></label>
+                        <input type="password" name="password" placeholder="Enter Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{4,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 4 or more characters" required>
+                        <br/>
+                        <label for="role"><b>Role</b></label>
+                        <br/>
+                        <select id="role" name="role" placeholder="Enter role" required>
+                          <option value="doctor">Dotor</option>
+                          <option value="patient">Patient</option>
+                        </select>
+                        <br/>
+                        <button type="submit" id = "submitbutton" name="signup" class="loginButton" onclick="validateEmail()">Sign up</button>
+                    </div>
+                </form>
+            </div>
+        </nav>
+        <main>
+            <div class="matra">
+                Schedule the dose.
+                <br/>
+                Worry less. Live healthier.
+            </div>
+            <a class="LaurynasMereckas" style="background-color:black;color:white;text-decoration:none;padding:4px 6px;font-family:-apple-system, BlinkMacSystemFont, &quot;San Francisco&quot;, &quot;Helvetica Neue&quot;, Helvetica, Ubuntu, Roboto, Noto, &quot;Segoe UI&quot;, Arial, sans-serif;font-size:12px;font-weight:bold;line-height:1.2;display:inline-block;border-radius:3px" href="https://unsplash.com/@laurynasm?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge" target="_blank" rel="noopener noreferrer" title="Download free do whatever you want high-resolution photos from Laurynas Mereckas"><span style="display:inline-block;padding:2px 3px"><svg xmlns="http://www.w3.org/2000/svg" style="height:12px;width:auto;position:relative;vertical-align:middle;top:-2px;fill:white" viewBox="0 0 32 32"><title>unsplash-logo</title><path d="M10 9V0h12v9H10zm12 5h10v18H0V14h10v9h12v-9z"></path></svg></span><span style="display:inline-block;padding:2px 3px">Laurynas Mereckas</span></a>
+            <img src="/image/homepage.jpg" alt="">
+        </main>
+        <script type="text/javascript">
+
+        const emailField = document.getElementById('email');
+        const submitButton = document.getElementById('submitbutton');
+        emailField.addEventListener('keyup', function (event) {
+          isValidEmail = emailField.checkValidity();
+          console.log("Got a key press")
+          if ( isValidEmail ) {
+            submitButton.disabled = false;
+            console.log("EMail Looks valid")
+          } else {
+            submitButton.disabled = true;
+            console.log("EMail is INVALID")
+          }
+        });
+
+            function showDiv(x) {
+                var x = document.getElementsByClassName(x)[0];
+                x.style.display = "block";
+
+            }
+
+            function closeDiv(x) {
+                var x = document.getElementsByClassName(x)[0];
+                x.style.display='none';
+            }
+
+            function validateEmail() {
+              const signUpForm = document.getElementsByClassName('animate form2');
+              const emailField = document.getElementById('email');
+              const passwordField = document.getElementById('password');
+              const submitButton = document.getElementById('submitbutton');
+
+              emailField.addEventListener('keyup', function (event) {
+                isValidEmail = emailField.checkValidity();
+
+                if ( isValidEmail ) {
+                  submitButton.disabled = false;
+                } else {
+                  submitButton.disabled = true;
+                }
+              });
+
+              submitButton.addEventListener('click', function (event) {
+                signUpForm.submit();
+              });
+            }
+        </script>
+    </body>
+</html>

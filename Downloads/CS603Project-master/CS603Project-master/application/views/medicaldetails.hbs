@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Medication Details</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="Patientdetails.css">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="/css/medicaldetails.css">
+</head>
+
+<body>
+  <nav>
+    <div class="logo">
+      medRec
+    </div>
+    <div class="loginSignup">
+      <a href="/profile" >Hello, {{name}} </a>
+      <button class="logoutButton" onclick="location.href='/index'">Logout</button>
+    </div>
+  </nav>
+  <main>
+    <div class = "medicine">
+      <form class="medicinedetails" action="/medicaldetails" method="post">
+
+        <label for="patientid"><b>PatientId: </b></label>
+        <input type="text" name="patientid" placeholder="Enter patientid" required>
+        <br/>
+        <br/>
+        <label for="medicine"><b>Medicine: </b></label>
+        <input type="text" name="medicine" placeholder="Enter medicine" required>
+        <br/>
+        <label for="disease"><b>Reason:</b></label>&nbsp&nbsp&nbsp
+        <input type="text" name="disease" placeholder="Enter disease" required>
+        <br/>
+        <label for="medicine"><b>Quantity:</b></label>
+        <input type="text" name="quantity" placeholder="Enter quantity" required>
+        <br/>
+        <label for="time"><b>Time:</b></label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+        <input type="time" id="appt" name="time" min="00:00" max="23:59" placeholder="Enter Time" required>
+        <br/>
+        <div><button id = "Submitbutton" class="submitButton"type="submit">Submit</button></div>
+      </form>
+    </div>
+  </main>
+
+</body>
+</html>

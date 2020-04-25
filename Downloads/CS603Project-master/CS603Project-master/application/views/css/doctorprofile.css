@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css?family=Comfortaa&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Comfortaa', cursive;
+    box-sizing: border-box;
+    line-height: 1.5;
+}
+
+body {
+    height: 100vh;
+    overflow: hidden;
+}
+
+.update {
+    cursor: pointer;
+    text-decoration: none;
+    color:blue;
+    align-content: right;
+}
+
+nav {
+    display: flex;
+    margin-top: 0;
+    color: #ffffff;
+    background-color: #263238;
+}
+
+.logo {
+    flex: 1;
+    text-align: center;
+    font-size: 2rem;
+}
+
+.loginSignup {
+    flex: 3;
+    text-align: right;
+    margin: auto;
+    padding-right: 3%;
+    font-size: 1.1rem;
+}
+
+.logoutButton {
+        font-family: 'Raleway', sans-serif;
+        cursor: pointer;
+        border-style: none;
+        color: inherit;
+        background-color: inherit;
+        font-size: inherit;
+}
+
+form{
+    margin: 5%;
+}
+
+a {
+    margin-right: 5%;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}

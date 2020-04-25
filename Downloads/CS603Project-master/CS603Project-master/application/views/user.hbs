@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="/css/user.css">
+        <title></title>
+    </head>
+    <body>
+        <nav>
+            <div class="logo">
+                medRec
+            </div>
+            <div class="loginSignup">
+                <span>Hello, {{userDetail.patient_name}}</span>
+                <button class="logoutButton" onclick="location.href='/index'">Logout</button>
+            </div>
+        </nav>
+        <main>
+            <a class="appointment">
+                Book an appointment
+            </a>
+            <a class="history">
+                Medical history
+            </a>
+            <a class="medication" href="/medicine">
+                Medication
+            </a>
+        </main>
+    </body>
+</html>
