@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.reactive.secretcamera">
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-feature android:name="android.hardware.camera"/>
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/accident"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/accident"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.SecretCamera"
+        android:requestLegacyExternalStorage="true"
+        >
+        <activity android:name=".activities.MainActivity" android:configChanges="keyboardHidden|orientation|screenSize">
+
+        </activity>
+
+        <activity android:name=".activities.StartActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+
+        <service
+            android:name=".services.SecretCamService"
+            android:permission="android.permission.BIND_JOB_SERVICE"
+            />
+
+    </application>
+
+</manifest>
